@@ -3,19 +3,40 @@
     <form
       class=" flex flex-col h-auto w-auto p-10 bg-white rounded-lg shadow-lg"
     >
-      <h1 class="font-bold text-lg mb-4">Add Wallet</h1>
-      <label for="Account Name" class="mr-4">Name:</label>
+      <h1 class="font-bold text-lg mb-4">{{ formTitle }}</h1>
+      <div class=" flex flex-col">
+        <label for="Name" class="mr-4">Name:</label>
+        <input type="text" class="rounded mb-4 " name="Name" />
+        <label for="Amount" class="mr-4">Amount:</label>
+        <input type="number" class="rounded mb-4" name="Amount" />
+        <label for="wallets">Choose a wallet:</label>
+        <select class="rounded mb-4" name="wallets" id="wallets">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+
+      <label for="Wallet Name" class="mr-4">Wallet Name:</label>
       <input
         type="text"
         class="rounded text-pink-500 mb-4"
-        name="Account Name"
+        name="Wallet Name"
       />
-      <label for="Account Number" class="mr-4">Account Number:</label>
-      <input
-        type="text"
-        class="rounded text-pink-500 mb-4"
-        name="Account Number"
-      />
+
+      <div class="flex justify-end">
+        <input
+          class="p-2 bg-red-500 hover:bg-red-900 rounded-lg text-white mr-2 text-xs"
+          type="submit"
+          value="Cancel"
+        />
+        <input
+          class="p-2 bg-blue-500 hover:bg-blue-900 rounded-lg text-white text-xs"
+          type="submit"
+          value="Submit"
+        />
+      </div>
     </form>
   </div>
 </template>
