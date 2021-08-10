@@ -64,10 +64,6 @@
       </ul>
     </div>
     <hr />
-    <div class="flex flex-1 justify-between items-center p-3 pl-24 pr-24">
-      <h1 class="text-lg font-bold">{{ menutitle }}</h1>
-      <AddButton />
-    </div>
   </nav>
 </template>
 
@@ -80,14 +76,21 @@ export default {
   data() {
     return {
       title: "SavingZ Tracker",
-      menuitem: ["GoalZ", "WalletZ"],
+      menuitem: ["GoalZ", "WalletZ", "BankZ", "CashZ"],
       menutitle: "GoalZ",
     };
   },
   methods: {
     getTitle(index) {
+      this.$emit(
+        "show-form-based-title",
+        (this.menutitle = this.menuitem[index])
+      );
+      // console.log((this.menutitle = this.menuitem[index]));
+      // console.log(this.menutitle);
       return (this.menutitle = this.menuitem[index]);
     },
+    showForm() {},
   },
 };
 </script>
