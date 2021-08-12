@@ -53,14 +53,15 @@
         <h1 class="text-lg font-bold">{{ title }}</h1>
       </button>
       <ul class="flex">
-        <button
+        <router-link
           class="items-center p-3 hover:bg-blue-100 hover:text-blue-500 rounded-lg text-metronic font-semibold"
-          v-for="(item, index) in menuitem"
+          v-for="item in navitems"
           :key="item.id"
           @click="getTitle(index)"
+          :to="item.endpoint"
         >
-          {{ item }}
-        </button>
+          {{ item.label }}
+        </router-link>
       </ul>
     </div>
     <hr />
@@ -68,16 +69,16 @@
 </template>
 
 <script>
-import AddButton from "./AddButton.vue";
 export default {
-  components: {
-    AddButton,
-  },
+  components: {},
   data() {
     return {
       title: "SavingZ Tracker",
-      menuitem: ["GoalZ", "WalletZ", "BankZ", "CashZ"],
       menutitle: "GoalZ",
+      navitems: [
+        { label: "GoalZ", endpoint: "/goalz" },
+        { label: "WalletZ", endpoint: "/walletz" },
+      ],
     };
   },
   methods: {
@@ -90,7 +91,11 @@ export default {
       // console.log(this.menutitle);
       return (this.menutitle = this.menuitem[index]);
     },
-    showForm() {},
+    showForm() {
+      this.navitems.forEach((item) => {
+        console.log(item.label, item.endpoint);
+      });
+    },
   },
 };
 </script>
