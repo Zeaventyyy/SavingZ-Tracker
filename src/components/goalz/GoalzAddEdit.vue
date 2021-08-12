@@ -2,9 +2,7 @@
   <div class="flex flex-col h-full">
     <div class="flex flex-1 justify-between items-center p-3 pl-24 pr-24">
       <h1 class="text-lg font-bold">{{ menutitle }}</h1>
-      <p>{{ goalZ }}</p>
       <button
-        @click="showForm"
         class="flex items-center p-2 bg-blue-500 hover:bg-blue-100 hover:text-blue-500 rounded-lg text-white font-semibold"
       >
         <svg
@@ -35,16 +33,14 @@
           {{ buttontitle }} {{ menutitle }}
         </h1>
         <div class="flex flex-col">
-          <label for="Name" class="mr-4">Name:</label>
+          <label for="Name" class="mr-4 self-start">Name:</label>
           <input type="text" class="rounded mb-4 " name="Name" />
-          <label for="Amount" class="mr-4">Amount:</label>
+          <label for="Amount" class="mr-4 self-start">Amount:</label>
           <input type="number" class="rounded mb-4" name="Amount" />
-          <label for="wallets">Choose a wallet:</label>
+          <label for="wallets" class="self-start">Choose a wallet:</label>
           <select class="rounded mb-4" name="wallets" id="wallets">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
+            <option value="volvo">BPI1</option>
+            <option value="saab">BPI2</option>
           </select>
         </div>
 
