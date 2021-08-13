@@ -2,28 +2,26 @@
   <div class="flex flex-col h-full">
     <div class="flex flex-1 justify-between items-center p-3 pl-24 pr-24">
       <h1 class="text-lg font-bold">{{ menutitle }}</h1>
-      <button
-        @click="showForm"
+      <router-link
+        to="/walletz"
         class="flex items-center p-2 bg-blue-500 hover:bg-blue-100 hover:text-blue-500 rounded-lg text-white font-semibold"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+          viewBox="0 0 20 20"
+          fill="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            fill-rule="evenodd"
+            d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+            clip-rule="evenodd"
           />
         </svg>
         <div>
           {{ buttontitle }}
         </div>
-      </button>
+      </router-link>
     </div>
 
     <div class="h-full w-full justify-center items-center flex bg-gray-100">
@@ -31,11 +29,11 @@
         class=" flex flex-col h-auto w-auto p-10 bg-white rounded-lg shadow-lg"
       >
         <h1 class="font-bold text-lg mb-4">
-          {{ buttontitle }} {{ menutitle }}
+          {{ "Add New " + menutitle }}
         </h1>
 
-        <div>
-          <label for="Wallet Name" class="mr-4">Wallet Name:</label>
+        <div class="flex flex-col">
+          <label for="Wallet Name" class="mr-4 self-start">Wallet Name:</label>
           <input type="text" class="rounded mb-4" name="Wallet Name" />
         </div>
 
@@ -61,7 +59,7 @@ export default {
   data() {
     return {
       menutitle: "WalletZ",
-      buttontitle: "Add New",
+      buttontitle: "Back",
     };
   },
 };
