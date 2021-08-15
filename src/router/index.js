@@ -14,7 +14,7 @@ const routes = [
     component: GoalzListing,
   },
   {
-    path: "/add-goalz",
+    path: "/goalz/create",
     name: "GoalZ",
     component: GoalZ,
   },
@@ -24,13 +24,21 @@ const routes = [
     component: WalletzListing,
   },
   {
-    path: "/add-walletz",
+    path: "/walletz/create",
     name: "WalletZ",
     component: WalletZ,
+    props: true,
+  },
+  {
+    path: "/walletz/:id/edit",
+    name: "WalletZ",
+    component: WalletZ,
+    props: true,
   },
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes,
 });
 
