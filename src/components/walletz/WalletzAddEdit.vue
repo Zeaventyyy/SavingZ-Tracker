@@ -100,7 +100,7 @@ export default {
         return;
       }
       if (this.destination != null) {
-        this.removeWallet(this.indexLang);
+        this.removeWallet(this.indexToDelete);
         this.form.id = this.destinationId;
         this.wallets.push(this.form);
         this.form = "";
@@ -130,7 +130,7 @@ export default {
     destination() {
       return this.wallets.find((i) => i.id === this.destinationId);
     },
-    indexLang() {
+    indexToDelete() {
       return this.wallets.findIndex((o) => o.id === this.destinationId);
     },
   },
