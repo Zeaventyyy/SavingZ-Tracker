@@ -19,6 +19,11 @@ const routes = [
     component: GoalZ,
   },
   {
+    path: "/goalz/:id/edit",
+    name: "GoalZ",
+    component: GoalZ,
+  },
+  {
     path: "/walletz",
     name: "WalletZ",
     component: WalletzListing,
