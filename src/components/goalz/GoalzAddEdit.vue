@@ -29,7 +29,7 @@
         class=" flex flex-col h-auto w-auto p-10 bg-white rounded-lg shadow-lg"
       >
         <h1 class="font-bold text-lg mb-4">
-          {{ "Add New" + " " + menutitle }}
+          {{ menuTitleType + menutitle }}
         </h1>
         <div class="flex flex-col">
           <label for="Name" class="mr-4 self-start">Name:</label>
@@ -85,6 +85,8 @@ import { v4 as uuidv4 } from "uuid";
 export default {
   data() {
     return {
+      destinationId: this.$route.params.id,
+      menuTitleType: "Add New ",
       menutitle: "GoalZ",
       buttontitle: "Back",
       form: {
@@ -97,7 +99,7 @@ export default {
       walletItems: [],
     };
   },
-  created() {
+  mounted() {
     this.getWalletz();
     this.getGoalz();
   },
@@ -108,13 +110,20 @@ export default {
         console.log("Di nag save");
         return;
       }
-
-      this.form.id = uuidv4();
-      console.log(this.form.id);
-      this.goalz.push(this.form);
-      this.saveGoalz();
-      this.form = "";
-      console.log("Nagdagdag");
+      if (this.destination != null) {
+        this.removeGoalz(this.indexToDelete);
+        this.form.id = this.destinationId;
+        this.goalz.push(this.form);
+        this.form = "";
+        this.saveGoalz();
+        console.log(this.destinationId);
+      } else {
+        this.form.id = uuidv4();
+        this.goalz.push(this.form);
+        this.form = "";
+        this.saveGoalz();
+        console.log("Nagdagdag");
+      }
     },
     removeGoalz(x) {
       this.goalz.splice(x, 1);
@@ -137,10 +146,28 @@ export default {
       if (localStorage.getItem("goalz")) {
         try {
           this.goalz = JSON.parse(localStorage.getItem("goalz"));
+          this.formData();
         } catch (e) {
-          // localStorage.removeItem("goalz");
+          return;
         }
       }
+    },
+    formData() {
+      if (this.destination != null) {
+        this.menuTitleType = "Edit ";
+        this.form.name = this.destination.name;
+        this.form.amountToSave = this.destination.amountToSave;
+        this.form.wallet = this.destination.wallet;
+        this.form.id = this.destination.id;
+      }
+    },
+  },
+  computed: {
+    destination() {
+      return this.goalz.find((i) => i.id === this.destinationId);
+    },
+    indexToDelete() {
+      return this.goalz.findIndex((o) => o.id === this.destinationId);
     },
   },
 };
