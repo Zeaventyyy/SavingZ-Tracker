@@ -59,7 +59,7 @@
               <router-link
                 class="self-center"
                 :to="{
-                  path: `/walletz/${goal.id}/edit`,
+                  path: `/goalz/${goal.id}/edit`,
                 }"
               >
                 <svg
