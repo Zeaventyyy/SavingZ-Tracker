@@ -29,7 +29,7 @@
     <div class="h-full w-full justify-center items-center flex bg-gray-100">
       <ul>
         <div
-          class="shadow-lg bg-white rounded w-96 p-4 mb-4"
+          class="box-border border-2 border-black bg-white rounded w-96 p-4 mb-4"
           v-for="(wallet, n) in wallets"
           :key="wallet.id"
         >
@@ -95,8 +95,21 @@ export default {
 
   methods: {
     removeWallet(x) {
-      this.wallets.splice(x, 1);
-      this.saveWallets();
+      this.$swal({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.wallets.splice(x, 1);
+          this.saveWallets();
+          this.$swal("Deleted!", "Your wallet has been deleted.", "success");
+        }
+      });
     },
     saveWallets() {
       const parsed = JSON.stringify(this.wallets);
