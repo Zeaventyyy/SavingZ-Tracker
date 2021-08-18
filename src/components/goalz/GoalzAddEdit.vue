@@ -1,27 +1,7 @@
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex flex-1 justify-between items-center p-3 pl-24 pr-24">
-      <h1 class="text-lg font-bold">{{ menutitle }}</h1>
-      <router-link
-        to="/goalz"
-        class="flex items-center p-2 bg-blue-500 hover:bg-blue-100 hover:text-blue-500 rounded-lg text-white font-semibold"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <div>
-          {{ buttontitle }}
-        </div>
-      </router-link>
+    <div class="flex justify-between items-center ml-24 mr-24 h-16">
+      <p class="text-lg font-bold">{{ menutitle }}</p>
     </div>
 
     <div class="h-full w-full justify-center items-center flex bg-gray-100">
@@ -69,8 +49,9 @@
             >Cancel
           </router-link>
           <button
+            type="submit"
             class="p-2 bg-blue-500 hover:bg-blue-900 rounded-lg text-white text-xs"
-            @click="addGoalz"
+            @click.stop.prevent="addGoalz"
           >
             Submit
           </button>
@@ -132,6 +113,7 @@ export default {
     saveGoalz() {
       const parsed = JSON.stringify(this.goalz);
       localStorage.setItem("goalz", parsed);
+      this.$router.push({ path: "/goalz" });
     },
     getWalletz() {
       if (localStorage.getItem("wallets")) {
@@ -172,3 +154,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+form {
+  width: 768px;
+}
+</style>
