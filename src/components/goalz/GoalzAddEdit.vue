@@ -6,7 +6,7 @@
 
     <div class="h-full w-full justify-center items-center flex bg-gray-100">
       <form
-        class=" flex flex-col h-auto w-auto p-10 bg-white rounded-lg shadow-lg"
+        class=" flex flex-col h-auto w-768 p-10 bg-white rounded-lg shadow-lg"
       >
         <h1 class="font-bold text-lg mb-4">
           {{ menuTitleType + menutitle }}
@@ -154,9 +154,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-form {
-  width: 768px;
-}
-</style>
