@@ -1,7 +1,7 @@
 <template>
   <nav class="flex flex-col ">
     <div class="flex flex-1 text-center p-6 pl-24 pr-24">
-      <button class="flex items-center mr-14">
+      <router-link to="/goalz" class="flex items-center mr-14">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -51,10 +51,10 @@
           <g></g>
         </svg>
         <h1 class="text-lg font-bold">{{ title }}</h1>
-      </button>
+      </router-link>
       <ul class="flex">
         <router-link
-          class="items-center p-3 hover:bg-blue-100 hover:text-blue-500 rounded-lg text-metronic font-semibold"
+          class="items-center p-3 hover:bg-gray-50 hover:text-metronic rounded-lg text-navTitleColor font-semibold"
           v-for="item in navitems"
           :key="item.id"
           @click="getTitle(index)"
