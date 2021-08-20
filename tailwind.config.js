@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        metronic: "#5e6278",
+        metronic: "#009ef7",
+        navTitleColor: "#5e6278",
+      },
+      width: {
+        "768": "48rem",
       },
     },
   },
