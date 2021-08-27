@@ -10,6 +10,9 @@ module.exports = {
       width: {
         "768": "48rem",
       },
+      screens: {
+        xs: "500px",
+      },
     },
   },
   variants: {
