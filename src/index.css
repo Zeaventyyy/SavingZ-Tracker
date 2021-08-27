@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 .tooltip {
   @apply invisible absolute;
@@ -8,4 +9,13 @@
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
-@tailwind utilities;
+
+/*Nav Styles*/
+.nav-lg {
+  @apply lg:justify-start lg:flex-row lg:p-6 lg:pl-24 lg:pr-24;
+}
+.nav-btn {
+  @apply items-center p-3 hover:bg-gray-50 hover:text-metronic rounded-lg text-navTitleColor font-semibold;
+}
+
+/*Nav Styles*/
