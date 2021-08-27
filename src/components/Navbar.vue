@@ -1,11 +1,14 @@
 <template>
-  <nav class="flex flex-col ">
-    <div class="flex flex-1 text-center p-6 pl-24 pr-24">
-      <router-link to="/goalz" class="flex items-center mr-14">
+  <nav>
+    <div class="flex flex-col text-center nav-lg">
+      <router-link
+        to="/goalz"
+        class="flex flex-row justify-between items-center text-white bg-blue-500 lg:bg-white lg:text-black  p-2"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          class="w-8 h-8 mr-4"
+          class="w-8 h-8 mr-4 fill-current text-white lg:text-black"
           version="1.1"
           id="Capa_1"
           x="0px"
@@ -50,11 +53,28 @@
           <g></g>
           <g></g>
         </svg>
-        <h1 class="text-lg font-bold">{{ title }}</h1>
+        <h1 class="text-lg lg:font-bold">{{ title }}</h1>
+        <button class="lg:hidden" v-on:click="isActive = !isActive">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
       </router-link>
-      <ul class="flex">
+      <ul
+        class="flex flex-col lg:flex-row items-center justify-center ml-6 "
+        v-bind:class="{ hidden: isActive }"
+      >
         <router-link
-          class="items-center p-3 hover:bg-gray-50 hover:text-metronic rounded-lg text-navTitleColor font-semibold"
+          class="nav-btn"
           v-for="item in navitems"
           :key="item.id"
           @click="getTitle(index)"
@@ -73,6 +93,7 @@ export default {
   components: {},
   data() {
     return {
+      isActive: false,
       title: "SavingZ Tracker",
       menutitle: "GoalZ",
       navitems: [
