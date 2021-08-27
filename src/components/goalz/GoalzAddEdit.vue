@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex justify-between items-center ml-24 mr-24 h-16">
+    <div
+      class="flex justify-center items-center lg:justify-start ml-6 pl-24 pr-24 h-16"
+    >
       <p class="text-lg font-bold">{{ menutitle }}</p>
     </div>
 
