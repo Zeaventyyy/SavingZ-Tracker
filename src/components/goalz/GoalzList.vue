@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex flex-1 justify-between items-center p-3 pl-24 pr-24">
+    <div class="flex h-38 justify-between items-center p-3 pl-24 pr-24">
       <h1 class="text-lg font-bold">{{ menutitle }}</h1>
       <router-link
         to="/goalz/create"
@@ -35,7 +35,7 @@
       </router-link>
     </div>
 
-    <div class="h-full w-full justify-center items-center flex bg-gray-100">
+    <div class="flex flex-1 justify-center items-center bg-gray-100 pt-5">
       <ul>
         <div>
           <div
