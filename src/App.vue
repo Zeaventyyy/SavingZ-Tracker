@@ -18,14 +18,6 @@ export default {
       path: "GoalZList",
     };
   },
-  methods: {
-    goToGoalz() {
-      this.$router.push({ name: this.path });
-    },
-  },
-  mounted() {
-    this.goToGoalz();
-  },
 };
 </script>
 
