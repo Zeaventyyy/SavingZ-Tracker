@@ -1,0 +1,32 @@
+{
+  "walletz": [
+    {
+      "id": "",
+      "name": ""
+    },
+    {
+      "name": "Test json server",
+      "id": "P5qmox-"
+    },
+    {
+      "name": "We",
+      "id": "sYMfurE"
+    },
+    {
+      "name": "John",
+      "id": "vP0v1ND"
+    },
+    {
+      "name": "Jane",
+      "id": "5YtRO5z"
+    }
+  ],
+  "goalz": [
+    {
+      "id": "",
+      "name": "",
+      "amountToSave": 0,
+      "wallet": {}
+    }
+  ]
+}
