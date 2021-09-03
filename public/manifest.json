@@ -1,0 +1,16 @@
+{
+  "name": "SavingZ Tracker",
+  "short_name": "Savingz",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "theme_color": "#3367D6",
+  "orientation": "portrait"
+}
