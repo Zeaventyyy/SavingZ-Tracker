@@ -11,11 +11,16 @@
 }
 
 /*Nav Styles*/
+
 .nav-lg {
   @apply lg:justify-start lg:flex-row lg:p-6 lg:pl-24 lg:pr-24;
 }
 .nav-btn {
   @apply items-center p-3 hover:bg-gray-50 hover:text-metronic rounded-lg text-navTitleColor font-semibold;
+}
+
+.active {
+  @apply bg-gray-50 text-metronic;
 }
 
 /*Nav Styles*/
