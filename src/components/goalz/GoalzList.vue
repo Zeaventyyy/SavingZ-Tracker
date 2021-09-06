@@ -168,7 +168,9 @@ export default {
         if (result.isConfirmed) {
           this.goalz.splice(x, 1);
           this.saveGoalz();
-          this.$swal("Deleted!", "Your goal has been deleted.", "success");
+          this.$toast.success("Item deleted successfully.", {
+            // optional options Object
+          });
         }
       });
     },
