@@ -107,7 +107,9 @@ export default {
         if (result.isConfirmed) {
           this.wallets.splice(x, 1);
           this.saveWallets();
-          this.$swal("Deleted!", "Your wallet has been deleted.", "success");
+          this.$toast.success("Item deleted successfully.", {
+            // optional options Object
+          });
         }
       });
     },
