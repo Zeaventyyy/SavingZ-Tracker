@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import WalletzAddEdit from "../components/walletz/WalletzAddEdit.vue";
+import WalletzAddEdit from "../../components/walletz/WalletzAddEdit.vue";
 
 export default {
   name: "WalletZ",

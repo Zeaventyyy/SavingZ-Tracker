@@ -1,17 +1,17 @@
 <template>
   <div class="">
-    <goalz-add-edit />
+    <goalz-list />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import GoalzAddEdit from "../components/goalz/GoalzAddEdit.vue";
+import GoalzList from "../../components/goalz/GoalzList.vue";
 
 export default {
-  name: "GoalZ",
+  name: "GoalZList",
   components: {
-    GoalzAddEdit,
+    GoalzList,
   },
 };
 </script>
