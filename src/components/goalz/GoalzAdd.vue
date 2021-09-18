@@ -27,6 +27,15 @@
             class="rounded mb-4"
             v-model="form.amountToSave"
             name="Amount"
+            min="0"
+          />
+          <label for="Topup" class="mr-4 self-start">Initial top-up:</label>
+          <input
+            type="number"
+            class="rounded mb-4"
+            v-model="form.topup"
+            name="Amount"
+            min="0"
           />
           <label for="wallets" class="self-start">Choose a wallet:</label>
           <select
@@ -75,7 +84,9 @@ export default {
       form: {
         id: "",
         name: "",
-        amountToSave: Number,
+        topup: [0],
+        amountToSave: 0,
+        goalzProgress: 0,
         wallet: {},
       },
       goalz: [],
@@ -102,10 +113,12 @@ export default {
         console.log(this.destinationId);
       } else {
         this.form.id = uuidv4();
+        this.form.goalzProgress = (
+          parseInt(this.form.topup * 100) / parseInt(this.form.amountToSave)
+        ).toFixed(2);
         this.goalz.push(this.form);
         this.form = "";
         this.saveGoalz();
-        console.log("Nagdagdag");
       }
     },
     removeGoalz(x) {
