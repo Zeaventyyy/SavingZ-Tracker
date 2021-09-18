@@ -19,8 +19,16 @@
   @apply items-center p-3 hover:bg-gray-50 hover:text-metronic rounded-lg text-navTitleColor font-semibold;
 }
 
-.active {
+/* .active {
   @apply bg-gray-50 text-metronic;
+} */
+
+.inputs {
+  @apply rounded mb-4 bg-gray-100 border-blue-400;
+}
+
+.inputsWithdraw {
+  @apply rounded mb-4 bg-gray-100 border-yellow-400;
 }
 
 /*Nav Styles*/
