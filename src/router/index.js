@@ -1,9 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import GoalZ from "../views/GoalZ.vue";
-import WalletZ from "../views/WalletZ.vue";
-import GoalzListing from "../views/GoalzListing.vue";
-import WalletzListing from "../views/WalletzListing.vue";
+import GoalzAdd from "../views/goalz/GoalzAdd.vue";
+import GoalzListing from "../views/goalz/GoalzListing.vue";
+import GoalzTopUp from "../views/goalz/GoalzTopUp.vue";
+import GoalzWithdraw from "../views/goalz/GoalzWithdraw.vue";
+import WalletZ from "../views/walletz/WalletZ.vue";
+import WalletzListing from "../views/walletz/WalletzListing.vue";
 
 Vue.use(VueRouter);
 
@@ -20,12 +22,22 @@ const routes = [
   {
     path: "/goalz/create",
     name: "GoalZ",
-    component: GoalZ,
+    component: GoalzAdd,
+  },
+  // {
+  //   path: "/goalz/:id/edit",
+  //   name: "GoalZ",
+  //   component: GoalZ,
+  // },
+  {
+    path: "/goalz/:id/topup",
+    name: "GoalzTopUp",
+    component: GoalzTopUp,
   },
   {
-    path: "/goalz/:id/edit",
-    name: "GoalZ",
-    component: GoalZ,
+    path: "/goalz/:id/withdraw",
+    name: "GoalzWithdraw",
+    component: GoalzWithdraw,
   },
   {
     path: "/walletz",
