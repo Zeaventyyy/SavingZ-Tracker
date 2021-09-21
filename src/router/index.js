@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import GoalzAdd from "../views/goalz/GoalzAdd.vue";
+import GoalzEdit from "../views/goalz/GoalzEdit.vue";
 import GoalzListing from "../views/goalz/GoalzListing.vue";
 import GoalzTopUp from "../views/goalz/GoalzTopUp.vue";
 import GoalzWithdraw from "../views/goalz/GoalzWithdraw.vue";
@@ -24,11 +25,11 @@ const routes = [
     name: "GoalZ",
     component: GoalzAdd,
   },
-  // {
-  //   path: "/goalz/:id/edit",
-  //   name: "GoalZ",
-  //   component: GoalZ,
-  // },
+  {
+    path: "/goalz/:id/edit",
+    name: "GoalzEdit",
+    component: GoalzEdit,
+  },
   {
     path: "/goalz/:id/topup",
     name: "GoalzTopUp",
