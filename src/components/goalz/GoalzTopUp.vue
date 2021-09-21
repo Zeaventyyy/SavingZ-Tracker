@@ -25,7 +25,7 @@
             <input
               disabled
               type="text"
-              class="inputs"
+              class="inputsTopup"
               v-model="form.name"
               name="Name"
             />
@@ -37,7 +37,7 @@
                 <input
                   disabled
                   type="number"
-                  class="inputs"
+                  class="inputsTopup"
                   v-model="form.amountToSave"
                   name="Goal"
                   min="0"
@@ -50,7 +50,7 @@
                 <input
                   disabled
                   type="number"
-                  class="inputs"
+                  class="inputsTopup"
                   v-model="this.currentTopUpValue"
                   name="Current"
                   min="0"
@@ -63,7 +63,7 @@
             >
             <select
               disabled
-              class="inputs text-black"
+              class="inputsTopup text-black"
               name="wallets"
               id="wallets"
               v-model="form.wallet"
