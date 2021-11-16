@@ -98,6 +98,36 @@ export default {
     this.getGoalz();
   },
   methods: {
+    // checkForm() {
+    //   this.form.id = uuidv4();
+    //   let schema = this.$yup.object().shape({
+    //     id: this.$yup.string().required(),
+    //     name: this.$yup.string().required(),
+    //     topup: this.$yup
+    //       .number()
+    //       .required()
+    //       .positive()
+    //       .integer(),
+    //     amountToSave: this.$yup
+    //       .number()
+    //       .required()
+    //       .positive()
+    //       .integer(),
+    //     wallet: this.$yup.object.required,
+    //   });
+    //   const { id, name, topup, amountToSave, wallet } = this.form;
+    //   const data = { id, name, topup, amountToSave, wallet };
+    //   this.errors = this.yupValidate(schema, data);
+    // },
+    // async yupValidate(schema, data) {
+    //   const { error } = await schema.validate(data, { abortEarly: false });
+    //   return error
+    //     ? error.inner.map((e) => ({
+    //         field: e.path,
+    //         defaultMessage: e.message,
+    //       }))
+    //     : [];
+    // },
     addGoalz() {
       // ensure they actually typed something
       if (!(this.form.amountToSave && this.form.wallet && this.form.name)) {
