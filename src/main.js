@@ -9,8 +9,10 @@ import VueToast from "vue-toast-notification";
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
 import "vue-toast-notification/dist/theme-sugar.css";
+import * as yup from "yup";
 
 Vue.use(VueToast);
+Vue.prototype.$yup = yup;
 
 Vue.config.productionTip = false;
 
